@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     re_path(r'^', include('backend.apps.mainapp.urls', namespace='main')),
+    re_path(r'^auth/', include('backend.apps.authapp.urls', namespace='auth')),
 ]
 
 if settings.DEBUG:
