@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>
+            {{ page_title|title }}
+        </title>
+    {% endblock %}
+
+    {% block css %}
+        <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" >
+    {% endblock %}
+
+    {% block favicon %}
+        <link href="{% static 'img/favicon.ico' %}" type="image/x-icon" rel="icon" />
+        <link href="{% static 'img/favicon.ico' %}" type="image/x-icon" rel="shortcut icon" />
+    {% endblock %}
+</head>
+
+<body>
+
+{% block site_name %}
+    <div class="site_name">
+        <hr>
+        <h1>Интернет-магазин IT-trade</h1>
+        <hr>
+    </div>
+{% endblock %}
+
+<div class="index_content">
+    {% block page_content %}
+    {% endblock %}
+</div>
+
+{% block footer %}
+    <div class="footer">
+        &copy; 2018-{% now "Y" %} «Все права защищены». Сегодня {% now "d/m/Y" %}
+    </div>
+{% endblock %}
+
+</body>
+
+</html>

@@ -15,26 +15,8 @@ def main(request):
 
 
 def catalog(request):
-    product = [
-        {
-            'name': 'Неуправляемый коммутатор DES-1016D с 16 портами 10/100Base-TX',
-            'img': '/static/img/dlink.jpg',
-            'link': '#'
-        },
-        {
-            'name': 'Маршрутизатор TP-LINK TL-R470T+',
-            'img': '/static/img/tplink.jpg',
-            'link': '#'
-        },
-        {
-            'name': 'Сетевое хранилище Zyxel NAS326',
-            'img': '/static/img/zyxel.jpg',
-            'link': '#'
-        },
-    ]
-
-    with open('backend/json/products.json', 'w', encoding='utf-8') as f:
-        json.dump(product, f)
+    with open('backend/json/products.json', 'r', encoding='utf-8') as f:
+        product = json.load(f)
 
     context = {
         'page_title': 'каталог',
