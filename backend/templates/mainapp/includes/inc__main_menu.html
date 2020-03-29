@@ -20,11 +20,32 @@
                     Контакты
                 </a>
             </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'auth:register' %}">
+                        {{ user.first_name|default:'Пользователь' }}
+                    </a>
+                </li>
+            {% endif %}
 
-            <li>
-                <a href="#">
-                    Корзина
-                </a>
-            </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="#">
+                        Корзина
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'auth:logout' %}">
+                        Выход
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'auth:login' %}">
+                        Вход
+                    </a>
+                </li>
+            {% endif %}
+
         </ul>
 </div>
