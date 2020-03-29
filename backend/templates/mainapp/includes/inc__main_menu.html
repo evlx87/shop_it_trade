@@ -1,0 +1,30 @@
+<div class="menu">
+        <ul>
+            <li>
+                <a href="{% url 'main:index' %}"
+                   class="{% if request.resolver_match.url_name == 'index' %}menu_active{%  endif %}">
+                    Главная страница
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'main:catalog' %}"
+                   class="{% if request.resolver_match.url_name == 'catalog' %}menu_active{%  endif %}">
+                    Каталог
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'main:contacts' %}"
+                   class="{% if request.resolver_match.url_name == 'contacts' %}menu_active{%  endif %}">
+                    Контакты
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Корзина
+                </a>
+            </li>
+        </ul>
+</div>
