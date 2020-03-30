@@ -20,26 +20,30 @@
 </head>
 
 <body>
+<div class='container'>
+    {% block site_name %}
+        <div class="header">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="">
+            </div>
+            <div class="site_name">
+                <h1>Интернет-магазин IT-trade</h1>
+            </div>
+            {% include 'mainapp/includes/inc__main_menu.html' %}
+        </div>
+    {% endblock %}
 
-{% block site_name %}
-    <div class="site_name">
-        <hr>
-        <h1>Интернет-магазин IT-trade</h1>
-        <hr>
+    <div class="content">
+        {% block page_content %}
+        {% endblock %}
     </div>
-{% endblock %}
 
-<div class="index_content">
-    {% block page_content %}
+    {% block footer %}
+        <div class="footer">
+            &copy; 2018-{% now "Y" %} «Все права защищены». Сегодня {% now "d/m/Y" %}
+        </div>
     {% endblock %}
 </div>
-
-{% block footer %}
-    <div class="footer">
-        &copy; 2018-{% now "Y" %} «Все права защищены». Сегодня {% now "d/m/Y" %}
-    </div>
-{% endblock %}
-
 </body>
 
 </html>
