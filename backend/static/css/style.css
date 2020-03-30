@@ -121,9 +121,36 @@ h4 {
     margin: auto auto;
 }
 /* Страница каталога */
-.catalog_content {
-
+.catalog_product_box {
+    padding-top: 30px;
+    padding-bottom: 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .catalog_product {
-
+    width: 280px;
+    height: 200px;
+    margin-bottom: 10px;
+	border: 1px solid black;
+}
+.catalog_product a {
+	text-decoration: none;
+	color: #222;
+}
+.catalog_product_content {
+    border: 1px solid #9c9c9c;
+    background-color: #ffffff;
+    opacity: 0.9;
+    height: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.catalog_product:hover .catalog_product_content {
+    display: flex;
 }
