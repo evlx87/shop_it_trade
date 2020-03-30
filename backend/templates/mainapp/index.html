@@ -1,23 +1,25 @@
 {% extends 'mainapp/base.html' %}
 
 {% block page_content %}
-
     <h2>Уважаемые покупатели!</h2>
     <p class="greeting">Мы рады приветствовать вас в нашем интернет-магазине. В каталоге вы сможете
         познакомиться с имеющимся у нас товаром и уточнить о его налиции на нашем складе.
         В разделе контакты размещена вся необходимая контактная информация: адрес, телефон,
         и схема проезда.</p>
-    <hr>
-    <h3>Посление поступления</h3>
-
-
-    {% for Product in new_products %}
-        <div class="new_products">
-            <h4>{{ Product.name }}</h4>
-            <p class="new_prod">{{ Product.short_desc }}</p>
-            <img src="{{ Product.image.url }}" alt="">
+    <h4>Посление поступления</h4>
+    <div class="new_products_box">
+    {% for item in new_products %}
+        <div>
+            <a class="new_products_link" href="#">
+                <div class="new_product">
+                    <h4>{{ item.name }}</h4>
+                    <p class="description_short">{{ item.short_desc }}</p>
+                    <div class="new_products_img" style="background-image: url({{ item.image.url }})">
+                    </div>
+                </div>
+            </a>
         </div>
     {% endfor %}
-
+    </div>
 {% endblock %}
 

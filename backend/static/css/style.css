@@ -13,7 +13,9 @@ h3 {
     color: black;
     font-size: 18px;
     font-weight: 400;
-
+}
+h4 {
+    text-align: center;
 }
 /* Главное меню */
 .menu {
@@ -88,4 +90,40 @@ h3 {
     text-align: right;
     padding-right: 10px;
     padding-top: 10px;
+}
+/* Новые товары на главной странице */
+.new_products_box {
+    padding-top: 30px;
+    padding-bottom: 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.new_products_link {
+	text-decoration: none;
+    color: #222;
+}
+.new_product {
+    float: left;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+	box-sizing: border-box;
+	padding: 4px;
+}
+.description_short {
+    text-align: center;
+    height: 30px;
+}
+.new_products_img {
+	height: 170px;
+	width: 270px;
+    margin: auto auto;
+}
+/* Страница каталога */
+.catalog_content {
+
+}
+.catalog_product {
+
 }
