@@ -161,7 +161,6 @@ h4 {
     flex-wrap: wrap;
 }
 .contact_left_side {
-    /*border: 1px solid black;*/
     float: left;
     text-align: center;
 	box-sizing: border-box;
@@ -188,4 +187,37 @@ h4 {
 .contact_form_buttons input {
     width: 200px;
     height: 30px;
+}
+/* Страница входа в систему */
+.login {
+    border: 1px solid #eaeaea;
+    width: 400px;
+    margin: 50px auto;
+    display: block;
+}
+.login .form-control[type="submit"] {
+    margin: 10px auto;
+}
+.login_form {
+
+}
+.login_btn {
+    border: 1px solid #eaeaea;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    color: #555;
+    text-decoration: none;
+}
+.login_btn a {
+    border: 1px solid #eaeaea;
+    color: #555;
+    text-decoration: none;
+}
+.login_btn a:hover, .login_btn:hover {
+    color: lightslategrey;
+    text-decoration: none;
+}
+.auth_forms {
+    text-align: center;
 }
