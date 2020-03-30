@@ -154,3 +154,38 @@ h4 {
 .catalog_product:hover .catalog_product_content {
     display: flex;
 }
+/* Страница контактов */
+.contact_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact_left_side {
+    /*border: 1px solid black;*/
+    float: left;
+    text-align: center;
+	box-sizing: border-box;
+}
+.contact_right_side {
+    float: left;
+    width: 450px;
+}
+.contact_oneline_text {
+    color: firebrick;
+    height: 16px;
+    width: 100%;
+    font-size: 16px;
+}
+.contact_bigline_text {
+    color: dodgerblue;
+    width: 100%;
+    font-size: 12px;
+}
+.contact_form_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.contact_form_buttons input {
+    width: 200px;
+    height: 30px;
+}
