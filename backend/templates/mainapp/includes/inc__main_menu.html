@@ -21,13 +21,20 @@
             </li>
             {% if user.is_authenticated %}
                 <li>
-                    <a href="{% url 'auth:register' %}">
-                        {{ user.first_name|default:'Пользователь' }}
-                    </a>
+                    <a>{{ user.first_name|default:'Пользователь' }}</a>
                     <ul>
                         <li>
-                            <a href="#">
-                                Корзина (<span>{{ basket|length }}</span>)
+                            <a href="{% url 'auth:update' %}">
+                                Профиль
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'basket:index' %}">
+                                {% if basket %}
+                                    Корзина<span>({{ basket.0.total_quantity }} шт)</span>
+                                {% else %}
+                                    Корзина
+                                {% endif %}
                             </a>
                         </li>
                         <li>

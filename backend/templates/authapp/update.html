@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+
+{% block page_content %}
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="Обновить профиль">
+    </form>
+    <button class="login_btn form-control">
+        <a href="{% url 'main:index' %}" class="">на главную</a>
+    </button>
+{% endblock %}
