@@ -188,6 +188,8 @@ h4 {
     width: 200px;
     height: 30px;
 }
+
+/* Модуль авторизации */
 /* Страница входа в систему */
 .login {
     border: 1px solid #eaeaea;
@@ -221,3 +223,4 @@ h4 {
 .auth_forms {
     text-align: center;
 }
+/* Страница регистрации */

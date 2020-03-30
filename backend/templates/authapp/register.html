@@ -1,12 +1,12 @@
-{% extends 'authapp/base.html' %}
+{% extends 'mainapp/base.html' %}
 
-{% load static %}
-
-{% block container %}
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <br>
-        <input class="form-control" type="submit" value="зарегистрироваться ">
-    </form>
+{% block page_content %}
+    <div class="login">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <input class="login_btn form-control" type="submit" value="Зарегистрироваться ">
+        </form>
+    </div>
 {% endblock %}
