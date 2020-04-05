@@ -24,7 +24,7 @@ def user_create(request):
         form = UserAdminCreateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('adminapp:index'))
+            return HttpResponseRedirect(reverse('admin_panel:index'))
     else:
         form = UserAdminCreateForm()
 
@@ -42,7 +42,7 @@ def user_update(request, pk):
         form = UserAdminUpdateForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('adminapp:index'))
+            return HttpResponseRedirect(reverse('admin_panel:index'))
     else:
         form = UserAdminUpdateForm(instance=user)
 
@@ -59,7 +59,7 @@ def user_delete(request, pk):
     if request.method == 'POST':
         user.is_active = False
         user.save()
-        return HttpResponseRedirect(reverse('adminapp:index'))
+        return HttpResponseRedirect(reverse('admin_panel:index'))
     elif request.method == 'GET':
         context = {
             'page_title': 'Админка/удаление пользователя',

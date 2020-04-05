@@ -17,6 +17,52 @@ h3 {
 h4 {
     text-align: center;
 }
+/* Кнопки */
+.button {
+    border-radius: 35px;
+    background-color: #f44336;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0 2px 5px 0 rgba(33, 33, 33, 0.35);
+    margin: auto;
+}
+.button:hover {
+    box-shadow: none;
+}
+.button:active {
+    box-shadow: none;
+    background-color: #d41306;
+}
+.red_button {
+    display: block;
+    height: 71px;
+    width: 210px;
+    border-radius: 35px;
+    background-color: #f44336;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: 0 2px 5px 0 rgba(33, 33, 33, 0.35);
+    line-height: 70px;
+    letter-spacing: 6px;
+    margin: auto;
+}
+.red_button:hover {
+    box-shadow: none;
+}
+.red_button:active {
+    box-shadow: none;
+    background-color: #d41306;
+}
 /* Главное меню */
 .menu {
     text-align: center;
@@ -225,8 +271,9 @@ h4 {
 .basket-container {
     margin: 5px auto;
     width: 850px;
+    height: 500px;
+    max-height: 500px;
     padding-left: 10px;
-    border: 1px solid #222;
 }
 .basket_record {
     position: relative;
@@ -274,27 +321,6 @@ h4 {
     display: block;
     float: left;
 }
-.basket_delete_btn {
-    border-radius: 35px;
-    background-color: #f44336;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 600;
-    padding-left: 5px;
-    padding-right: 5px;
-    box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
-    margin: auto;
-}
-.basket_delete_btn:hover {
-    box-shadow: none;
-}
-.basket_delete_btn:active {
-    box-shadow: none;
-    background-color: #d41306;
-}
 .basket_summary {
     text-align: center;
     display: block;
@@ -311,7 +337,6 @@ h4 {
 }
 .right_side {
     height: 600px;
-    /*width: 400px;*/
 }
 .product_img {
     border: 2px solid #2F5A53;
@@ -323,58 +348,82 @@ h4 {
     line-height: 24px;
     text-align: left;
 }
-/* Красная кнопка */
-.red_button {
-    display: block;
-    height: 71px;
-    width: 210px;
-    border-radius: 35px;
-    background-color: #f44336;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-    box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
-    line-height: 70px;
-    letter-spacing: 6px;
-    margin: auto;
-}
-.red_button:hover {
-    box-shadow: none;
-}
-.red_button:active {
-    box-shadow: none;
-    background-color: #d41306;
-}
 /* Админка */
 .users_list {
-
+    border: 1px solid black;
+    width: 900px;
+    height: 585px;
+    max-height: 585px;
+    margin: 10px auto;
 }
-.admin_button {
-
+.admin_button_panel {
+    /*margin-top: 5px;*/
+    text-align: center;
 }
 .user_record {
-
+    height: 125px;
+    margin: 5px auto;
+    position: relative;
+    padding-left: 10px;
 }
 .user_record img {
+    display: block;
+    float: left;
+    height: 125px;
+    border: 1px solid black;
+}
+.user_record .user_role {
+    display: block;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    width: 125px;
+    height: 125px;
+    border: 1px solid black;
+}
+.user_record .user_name {
+    display: block;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
     width: 150px;
+    height: 125px;
+    padding-left: 4px;
+    border: 1px solid black;
 }
-.user_role {
-
+.user_record .user_name a {
+    color: #555;
 }
-.user_name {
-
+.user_record .user_name p {
+    margin: 10px auto;
+    font-size: 20px;
 }
-.user_age {
-
+.user_record .user_age {
+    display: block;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    width: 60px;
+    height: 125px;
+    border: 1px solid black;
 }
-.user_email {
-
+.user_record .user_email {
+    display: block;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    width: 175px;
+    height: 125px;
+    border: 1px solid black;
 }
-.user_lastlogin {
-
+.user_record .user_last_login {
+    display: block;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    width: 175px;
+    height: 125px;
+    border: 1px solid black;
 }
 .user_delete {
 
