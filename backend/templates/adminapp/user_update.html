@@ -7,8 +7,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <input class="form-control" type="submit" value="сохранить">
+            <a class="button" href="{% url 'admin_panel:index' %}">к списку пользователей</a>
         </form>
-        <a class="admin_button" href="{% url 'admin_panel:index' %}">к списку пользователей</a>
     </div>
-
 {% endblock %}
