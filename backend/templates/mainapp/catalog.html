@@ -4,9 +4,9 @@
 {% block page_content %}
     <h2>Каталог товаров</h2>
     <div class="catalog_product_box">
-        {% for item in product %}
+        {% for item in catalog_products %}
         <div class="catalog_product" style="background-image: url(/media/{{ item.image }})">
-            <a href="#">
+            <a href="{% url 'main:product' item.pk %}">
                 <div class="catalog_product_content">
                     <h4>{{ item.name }}</h4>
                     <p>{{ item.short_desc }}</p>

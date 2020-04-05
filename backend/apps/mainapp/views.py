@@ -1,12 +1,17 @@
 import json
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 from backend.apps.mainapp.models import Product, ProductCategory
 
 
 # Create your views here.
+def get_products_menu():
+    return ProductCategory.objects.all()
+
+
 def get_basket(request):
-    if request.is_authenticated:
-        return request.basket.all().order_by('product__category')
+    if request.user.is_authenticated:
+        return request.user.basket.all().order_by('product__category')
     else:
         return []
 
@@ -15,25 +20,41 @@ def main(request):
     new_products = Product.objects.all()
 
     context = {
-        'page_title': 'магазин',
+        'page_title': 'Магазин',
         'new_products': new_products
     }
     return render(request, 'mainapp/index.html', context)
 
 
 def catalog(request):
-    with open('backend/json/products.json', 'r', encoding='utf-8') as f:
-        product = json.load(f)
+    # with open('backend/json/products.json', 'r', encoding='utf-8') as f:
+    #     product = json.load(f)
+
+    catalog_products = Product.objects.all()[:8]
 
     context = {
-        'page_title': 'каталог',
-        'product': product,
+        'page_title': 'Каталог',
+        'products_menu': get_products_menu(),
+        'catalog_products': catalog_products,
+        'basket': get_basket(request),
+        # 'product': product,
     }
     return render(request, 'mainapp/catalog.html', context)
 
 
 def contacts(request):
     context = {
-        'page_title': 'контакты',
+        'page_title': 'Контакты',
     }
     return render(request, 'mainapp/contacts.html', context)
+
+
+def product(request, pk):
+    context = {
+        'page_title': 'Страница товара',
+        'product': get_object_or_404(Product, pk=pk),
+        'products_menu': get_products_menu(),
+        'category': Product.category,
+        'basket': get_basket(request),
+    }
+    return render(request, 'mainapp/product.html', context)

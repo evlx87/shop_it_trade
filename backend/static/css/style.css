@@ -296,3 +296,49 @@ h4 {
     height: 170px;
     float: none;
 }
+/* Страница товара */
+.left_side {
+    float: left;
+    height: 600px;
+    width: 450px;
+    text-align: center;
+}
+.right_side {
+    height: 600px;
+    /*width: 400px;*/
+}
+.product_img {
+    border: 2px solid #2F5A53;
+}
+.product_full_info {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+/* Красная кнопка */
+.red_button {
+    display: block;
+    height: 71px;
+    width: 210px;
+    border-radius: 35px;
+    background-color: #f44336;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
+    line-height: 70px;
+    letter-spacing: 6px;
+    margin: auto;
+}
+.red_button:hover {
+    box-shadow: none;
+}
+.red_button:active {
+    box-shadow: none;
+    background-color: #d41306;
+}
