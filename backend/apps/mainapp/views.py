@@ -4,6 +4,13 @@ from backend.apps.mainapp.models import Product, ProductCategory
 
 
 # Create your views here.
+def get_basket(request):
+    if request.is_authenticated:
+        return request.basket.all().order_by('product__category')
+    else:
+        return []
+
+
 def main(request):
     new_products = Product.objects.all()
 
