@@ -131,3 +131,5 @@ dmypy.json
 /run.bat
 /migrations.bat
 /backend/apps/authapp/migrations/
+/backend/apps/mainapp/migrations/
+/backend/apps/basketapp/migrations/

@@ -27,9 +27,6 @@ def main(request):
 
 
 def catalog(request):
-    # with open('backend/json/products.json', 'r', encoding='utf-8') as f:
-    #     product = json.load(f)
-
     catalog_products = Product.objects.all()[:8]
 
     context = {
@@ -37,7 +34,6 @@ def catalog(request):
         'products_menu': get_products_menu(),
         'catalog_products': catalog_products,
         'basket': get_basket(request),
-        # 'product': product,
     }
     return render(request, 'mainapp/catalog.html', context)
 

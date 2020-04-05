@@ -14,3 +14,15 @@ class Basket(models.Model):
                                            default=0)
     add_datetime = models.DateTimeField(verbose_name='время',
                                         auto_now_add=True)
+
+    @property
+    def product_cost(self):
+        return self.product.price * self.quantity
+
+    @property
+    def total_quantity(self):
+        return sum([el.quantity for el in self.user.basket.all()])
+
+    @property
+    def total_cost(self):
+        return sum([el.product_cost for el in self.user.basket.all()])
