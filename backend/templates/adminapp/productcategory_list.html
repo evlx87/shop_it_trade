@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <div class="category_list">
+        <a class="admin_button" href="#">новая категория</a>
+
+        {% for object in object_list %}
+            <div class="category_record {% if not object.is_active %}not_active{% endif %}">
+                <div class="category_name">{{ object.name|title }}</div>
+
+                <div class="category_actions">
+                    <a class="admin_button" href="#">товары категории</a>
+                    <a class="admin_button" href="#">редактировать</a>
+                    <a class="admin_button" href="#">удалить</a>
+                </div>
+
+                <div class="category_desc">{{ object.description }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

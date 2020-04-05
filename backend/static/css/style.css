@@ -348,3 +348,49 @@ h4 {
     box-shadow: none;
     background-color: #d41306;
 }
+/* Админка */
+.users_list {
+
+}
+.admin_button {
+
+}
+.user_record {
+
+}
+.user_record img {
+    width: 150px;
+}
+.user_role {
+
+}
+.user_name {
+
+}
+.user_age {
+
+}
+.user_email {
+
+}
+.user_lastlogin {
+
+}
+.user_delete {
+
+}
+.category_list {
+
+}
+.category_record {
+
+}
+.category_name {
+
+}
+.category_actions {
+
+}
+.category_desc {
+
+}
