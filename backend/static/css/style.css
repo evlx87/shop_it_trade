@@ -223,78 +223,84 @@ h4 {
 }
 /* Страница корзины */
 .basket-container {
-    margin: 25px auto;
+    margin: 5px auto;
+    width: 850px;
+    padding-left: 10px;
+    border: 1px solid #222;
 }
-.basket-container .head {
-    margin: 25px auto;
-}
-.basket-container button {
-    margin-left: 25px;
-    width: 150px;
+.basket_record {
+    position: relative;
     display: block;
-    float: left;
+    height: 80px;
+    float: none;
+    margin: 10px auto;
 }
-.basket-container button a {
-    text-decoration: none;
-    color: #555;
-}
-.basket-container img {
-    display: block;
+.basket_record img {
     float: left;
-    width: 150px;
+    width: 100px;
     border-radius: 25px;
 }
-.basket-container input[type="submit"] {
-    width: 150px;
-    display: block;
-    float: left;
-    margin-bottom: 25px;
-}
-.basket-container .basket_summary {
-    display: block;
-    margin-left: 50px;
-    margin-bottom: 15px;
-    color: #555;
-}
-.basket-list input[type="number"] {
-    width: 3em;
-    position: relative;
-    display: block;
-    float: left;
-}
-.basket-list span.category_name {
+.basket_record span.category_name {
     margin-left: 2em;
-    width: 5em;
+    width: 8em;
     position: relative;
     display: block;
     float: left;
 }
-.basket-list span.product_name {
+.basket_record span.product_name {
     margin-left: 1em;
     width: 8em;
     position: relative;
     display: block;
     float: left;
 }
-.basket-list span.product_price {
+.basket_record span.product_price {
+    margin-left: 1em;
+    width: 8em;
+    position: relative;
+    display: block;
+    float: left;
+}
+.basket_record input[type="number"] {
+    width: 3em;
+    position: relative;
+    display: block;
+    float: left;
+}
+.basket_record span.product_cost {
     margin-left: 1em;
     width: 7em;
     position: relative;
     display: block;
     float: left;
 }
-.basket-list span.product_cost {
-    margin-left: 1em;
-    width: 7em;
-    position: relative;
-    display: block;
-    float: left;
+.basket_delete_btn {
+    border-radius: 35px;
+    background-color: #f44336;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
+    margin: auto;
 }
-.basket-list .basket_record {
-    position: relative;
+.basket_delete_btn:hover {
+    box-shadow: none;
+}
+.basket_delete_btn:active {
+    box-shadow: none;
+    background-color: #d41306;
+}
+.basket_summary {
+    text-align: center;
     display: block;
-    height: 170px;
-    float: none;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #555;
 }
 /* Страница товара */
 .left_side {

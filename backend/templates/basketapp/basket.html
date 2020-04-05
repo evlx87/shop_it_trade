@@ -1,10 +1,8 @@
 {% extends 'mainapp/base.html' %}
 
 {% block page_content %}
+    <h2>Ваша корзина, {{ user.first_name|title|default:'Пользователь' }}</h2>
     <div class="basket-container">
-        <h2>Ваша корзина, {{ user.first_name|title|default:'Пользователь' }}</h2>
-        <div class="basket-list">
-            {% include 'basketapp/includes/basket_list.html' %}
-        </div>
+        {% include 'basketapp/includes/basket_list.html' %}
     </div>
 {% endblock %}
