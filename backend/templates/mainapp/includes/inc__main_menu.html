@@ -6,7 +6,6 @@
                     Главная страница
                 </a>
             </li>
-
             <li>
                 <a href="{% url 'main:catalog' %}"
                    class="{% if request.resolver_match.url_name == 'catalog' %}menu_active{%  endif %}">
@@ -22,22 +21,28 @@
             </li>
             {% if user.is_authenticated %}
                 <li>
-                    <a href="{% url 'auth:register' %}">
-                        {{ user.first_name|default:'Пользователь' }}
-                    </a>
-                </li>
-            {% endif %}
-
-            {% if user.is_authenticated %}
-                <li>
-                    <a href="#">
-                        Корзина
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'auth:logout' %}">
-                        Выход
-                    </a>
+                    <a>{{ user.first_name|default:'Пользователь' }}</a>
+                    <ul>
+                        <li>
+                            <a href="{% url 'auth:update' %}">
+                                Профиль
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'basket:index' %}">
+                                {% if basket %}
+                                    Корзина<span>({{ basket.0.total_quantity }} шт)</span>
+                                {% else %}
+                                    Корзина
+                                {% endif %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'auth:logout' %}">
+                                Выход
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             {% else %}
                 <li>

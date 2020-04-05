@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'backend.apps.mainapp',
     'backend.apps.authapp',
+    'backend.apps.basketapp',
 ]
 
 MIDDLEWARE = [

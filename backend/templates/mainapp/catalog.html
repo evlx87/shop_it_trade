@@ -2,15 +2,17 @@
 {% load static %}
 
 {% block page_content %}
-
-    {% include 'mainapp/includes/inc__main_menu.html' %}
-
     <h2>Каталог товаров</h2>
-    <p class="catalog_content"></p>
-    {% for item in product %}
-    <div class="catalog_product">
-        <a href="{{ item.link }}"><img src="{{ item.img }}">{{ item.name }}</a>
+    <div class="catalog_product_box">
+        {% for item in catalog_products %}
+        <div class="catalog_product" style="background-image: url(/media/{{ item.image }})">
+            <a href="{% url 'main:product' item.pk %}">
+                <div class="catalog_product_content">
+                    <h4>{{ item.name }}</h4>
+                    <p>{{ item.short_desc }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
 {% endblock %}

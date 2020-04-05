@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from backend.apps.authapp.forms import UserLoginForm, UserRegisterForm
+from backend.apps.authapp.forms import UserLoginForm, UserRegisterForm, UserUpdateForm
 from django.contrib import auth
 
 
@@ -47,3 +47,20 @@ def register(request):
     }
 
     return render(request, 'authapp/register.html', context)
+
+
+def update(request):
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('auth:update'))
+    else:
+        form = UserUpdateForm(instance=request.user)
+
+    context = {
+        'page_title': 'редактирование профиля',
+        'form': form
+    }
+
+    return render(request, 'authapp/update.html', context)

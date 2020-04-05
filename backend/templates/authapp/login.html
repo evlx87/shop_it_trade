@@ -1,19 +1,18 @@
-{% extends 'authapp/base.html' %}
-{% load static %}
+{% extends 'mainapp/base.html' %}
 
-{% block container %}
-    <div class="h2 text-center head">
-        Вход в систему
+{% block page_content %}
+    <h2>Вход в систему</h2>
+    <div class="login">
+        <form method="post">
+            {% csrf_token %}
+            <div class="auth_forms">{{ form.as_p }}</div>
+            <input class="login_btn form-control" type="submit" value="Войти">
+            <button class="login_btn form-control">
+                <a href="{% url 'auth:register' %}" class="">Зарегистрироваться</a>
+            </button>
+            <button class="login_btn form-control">
+                <a href="#">Вход через VK</a>
+            </button>
+        </form>
     </div>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <br>
-        <input class="form-control" type="submit" value="войти">
-
-    <a href="{% url 'auth:register' %}" class="">
-        Зарегистрироваться
-    </a>
-    </form>
 {% endblock %}

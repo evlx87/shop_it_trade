@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="left_side">
+        <img class="product_img" src="/media/{{ product.image }}">
+        <p></p>
+        <h2>Цена: {{ product.price }} руб</h2>
+        <p></p>
+        <h4>Кол-во на складе: {{ product.quantity }} шт.</h4>
+        <p></p>
+        <a class="red_button" href="{% url 'basket:add' product.pk %}">
+            <div class="red_button">купить</div>
+        </a>
+    </div>
+    <div class="right_side">
+        <h1>{{ product.name }}</h1>
+        <p class="product_full_info" style="text-align: justify;">{{ product.description }}</p>
+    </div>
+
+
+{% endblock %}
