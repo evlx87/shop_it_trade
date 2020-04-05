@@ -356,21 +356,23 @@ h4 {
     max-height: 585px;
     margin: 10px auto;
 }
-.admin_button_panel {
-    /*margin-top: 5px;*/
-    text-align: center;
-}
 .user_record {
-    height: 125px;
-    margin: 5px auto;
+    height: 160px;
+    margin: 10px auto;
     position: relative;
     padding-left: 10px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+}
+.admin_button_panel {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    text-align: center;
 }
 .user_record img {
     display: block;
     float: left;
     height: 125px;
-    border: 1px solid black;
 }
 .user_record .user_role {
     display: block;
@@ -379,7 +381,6 @@ h4 {
     margin-left: 10px;
     width: 125px;
     height: 125px;
-    border: 1px solid black;
 }
 .user_record .user_name {
     display: block;
@@ -389,7 +390,6 @@ h4 {
     width: 150px;
     height: 125px;
     padding-left: 4px;
-    border: 1px solid black;
 }
 .user_record .user_name a {
     color: #555;
@@ -405,7 +405,6 @@ h4 {
     margin-left: 10px;
     width: 60px;
     height: 125px;
-    border: 1px solid black;
 }
 .user_record .user_email {
     display: block;
@@ -414,7 +413,6 @@ h4 {
     margin-left: 10px;
     width: 175px;
     height: 125px;
-    border: 1px solid black;
 }
 .user_record .user_last_login {
     display: block;
@@ -423,7 +421,6 @@ h4 {
     margin-left: 10px;
     width: 175px;
     height: 125px;
-    border: 1px solid black;
 }
 .user_delete {
     text-align: center;

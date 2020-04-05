@@ -9,13 +9,13 @@ from backend.apps.mainapp.models import ProductCategory
 
 
 def index(request):
-    object_list = User.objects.all()
+    object_list = User.objects.all()[:3]
 
     context = {
-        'page_title': 'админка/пользователи',
+        'page_title': 'Админка/пользователи',
         'object_list': object_list
     }
-    return render(request, 'adminapp/admin_panel.html', context)
+    return render(request, 'adminapp/user_list.html', context)
 
 
 @user_passes_test(lambda x: x.is_superuser)
@@ -29,7 +29,7 @@ def user_create(request):
         form = UserAdminCreateForm()
 
     context = {
-        'page_title': 'админка/новый пользователь',
+        'page_title': 'Админка/новый пользователь',
         'form': form
     }
     return render(request, 'adminapp/user_update.html', context)
@@ -47,7 +47,7 @@ def user_update(request, pk):
         form = UserAdminUpdateForm(instance=user)
 
     context = {
-        'page_title': 'админка/редактирование пользователя',
+        'page_title': 'Админка/редактирование пользователя',
         'form': form
     }
     return render(request, 'adminapp/user_update.html', context)

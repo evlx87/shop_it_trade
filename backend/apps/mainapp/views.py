@@ -17,7 +17,7 @@ def get_basket(request):
 
 
 def main(request):
-    new_products = Product.objects.all()
+    new_products = Product.objects.all()[:3]
 
     context = {
         'page_title': 'Магазин',
