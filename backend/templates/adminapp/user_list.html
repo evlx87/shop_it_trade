@@ -6,7 +6,7 @@
     <div class="admin_panel_content">
         <div class="record_box">
             {% for object in object_list %}
-                <div class="record {% if not object.is_active %}not_active{% endif %}">
+                <div class="record">
                     <div>
                         <div class="user_avatar">
                             <img src="/media/{{ object.avatar|default:'user_avatars/default.jpg' }}" alt="{{ object.username }}">

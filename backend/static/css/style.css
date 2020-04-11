@@ -351,22 +351,19 @@ h4 {
 /* Админка */
 .admin_panel_content {
     border: 1px solid black;
-    width: 900px;
     height: 500px;
     margin: 10px auto;
 }
 .admin_button_panel {
-    width: 900px;
     margin: 10px auto;
     text-align: center;
-    /*border: 1px solid black;*/
 }
 /* Админка: Отображение элемента (записи) */
 .record_box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 750px;
+    width: 800px;
     margin: 10px auto;
 }
 .record {
@@ -409,18 +406,27 @@ h4 {
     height: 50px;
 }
 /* Админка: Страницы категорий */
-.category_list {
-
-}
 .category_record {
-
+    height: 200px;
+    width: 250px;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 .category_name {
-
-}
-.category_actions {
-
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
 }
 .category_desc {
-
+    margin: 5px auto;
+    height: 90px;
+    width: 95%;
+    text-align: center;
+}
+.category_actions {
+    margin: 5px auto;
+    width: 80%;
+    text-align: center;
 }
