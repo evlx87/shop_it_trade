@@ -9,6 +9,14 @@ from backend.apps.mainapp.models import ProductCategory
 
 
 def index(request):
+    context = {
+        'page_title': 'Админка',
+    }
+    return render(request, 'adminapp/admin_panel.html', context)
+
+
+@user_passes_test(lambda x: x.is_superuser)
+def user_list(request):
     object_list = User.objects.all()[:3]
 
     context = {

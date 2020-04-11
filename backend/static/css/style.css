@@ -425,6 +425,16 @@ h4 {
 .user_delete {
     text-align: center;
 }
+.admin_panel_content {
+    display: block;
+    /*border: 1px solid black;*/
+    width: 900px;
+    height: 450px;
+    margin: 10px auto;
+}
+.admin_panel_content p {
+    text-align: center;
+}
 .category_list {
 
 }
