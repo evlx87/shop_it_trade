@@ -376,6 +376,9 @@ h4 {
 .record_button_panel {
     text-align: center;
 }
+.record_center {
+    text-align: center;
+}
 /* Админка: Страницы списка пользователей */
 .user_avatar {
     text-align: center;
@@ -429,4 +432,28 @@ h4 {
     margin: 5px auto;
     width: 80%;
     text-align: center;
+}
+/* Админка: Список продуктов категории */
+.product_record {
+    width: 300px;
+    height: 473px;
+    border: 1px solid black;
+}
+.product_record_img {
+    margin: 5px auto;
+    text-align: center;
+    height: 190px;
+}
+.product_record_img img {
+    width: 90%;
+}
+.product_record_name {
+    font-weight: bold;
+    height: 60px;
+}
+.product_record_summary {
+    height: 60px;
+}
+.product_record_desc {
+    height: 90px;
 }

@@ -11,11 +11,13 @@
         {% endif %}?
     </h2>
 
-    <div class="user_delete">
+    <div>
         <form method="post">
             {% csrf_token %}
-            <input class="button" type="submit" value="удалить">
-            <a class="button" href="{% url 'admin_panel:index' %}">отмена</a>
+            <div class="admin_button_panel">
+                <input class="button" type="submit" value="удалить">
+                <input class="button" type="button" value="отмена" onclick="location.href='{% url 'admin_panel:user_list' %}'">
+            </div>
         </form>
     </div>
 {% endblock %}

@@ -6,8 +6,8 @@
         <form class="form-horizontal" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <input class="form-control" type="submit" value="сохранить">
-            <a class="button" href="{% url 'admin_panel:index' %}">к списку пользователей</a>
+            <input class="button form-control" type="submit" value="сохранить">
+            <input class="button" type="button" value="отмена" onclick="location.href='{% url 'admin_panel:user_list' %}'">
         </form>
     </div>
 {% endblock %}

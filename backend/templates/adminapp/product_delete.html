@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>Уверены, что хотите удалить продукт <b>{{ object.name }}</b>?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="admin_button_panel">
+            <input class="button" type="submit" value="удалить">
+            <input class="button" type="button" value="отмена" onclick="location.href='{% url 'admin_panel:category_list' %}'">
+        </div>
+    </form>
+{% endblock %}

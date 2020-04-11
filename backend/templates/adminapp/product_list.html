@@ -1,0 +1,34 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>Список продуктов категории {{ category.name }}</h2>
+    <div class="admin_panel_content">
+        <div class="record_box">
+            {% for item in object_list %}
+                <div class="product_record {% if not item.is_active %}not_active{% endif %}">
+                    <div class="product_record_img">
+                    <img src="/media/{{ item.image|default:'products_images/default.jpg' }}" alt="{{ item.name }}">
+                    </div>
+                    <div class="product_record_name record_center">{{ item.name|title }}</div>
+                    <div class="product_record_summary record_center">
+                        <p><b>цена: </b>{{ item.price }} руб<br>
+                            <b>количество: </b>{{ item.quantity }}</p>
+                    </div>
+
+                    <div class="product_record_desc record_center">
+                        {{ item.short_desc|title }}
+                    </div>
+                    <div class="record_button_panel">
+                        <a class="button" href="{% url 'admin_panel:product_read' item.pk %}">подробнее</a>
+                        <a class="button" href="{% url 'admin_panel:product_update' item.pk %}">редактировать</a>
+                        <a class="button" href="{% url 'admin_panel:product_delete' item.pk %}">удалить</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="admin_button_panel">
+        <a class="button" href="{% url 'admin_panel:product_create' category.pk %}">новый продукт</a>
+    </div>
+{% endblock %}
