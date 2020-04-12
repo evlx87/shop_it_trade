@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'backend.apps.mainapp',
     'backend.apps.authapp',
     'backend.apps.basketapp',
+    'backend.apps.orderapp',
 ]
 
 MIDDLEWARE = [
