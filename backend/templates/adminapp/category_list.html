@@ -1,0 +1,24 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>Список категорий</h2>
+    <div class="admin_panel_content">
+        <div class="record_box">
+            {% for object in object_list %}
+                <div class="category_record {% if not object.is_active %}not_active{% endif %}">
+                    <div class="category_name">{{ object.name|title }}</div>
+                    <div class="category_desc">{{ object.description }}</div>
+                    <div class="category_actions">
+                        <a class="button" href="{% url 'admin_panel:category_products' object.pk %}">товары категории</a>
+                        <a class="button" href="{% url 'admin_panel:category_update' object.pk %}">редактировать</a>
+                        <a class="button" href="{% url 'admin_panel:category_delete' object.pk %}">удалить</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="admin_button_panel">
+        <a class="button" href="#">новая категория</a>
+    </div>
+{% endblock %}

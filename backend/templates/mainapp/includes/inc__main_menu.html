@@ -28,6 +28,13 @@
                                 Профиль
                             </a>
                         </li>
+                        {% if user.is_superuser %}
+                        <li>
+                            <a href="{% url 'admin_panel:index' %}">
+                                Админка
+                            </a>
+                        </li>
+                        {% endif %}
                         <li>
                             <a href="{% url 'basket:index' %}">
                                 {% if basket %}

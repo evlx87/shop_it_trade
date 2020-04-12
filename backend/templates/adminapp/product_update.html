@@ -1,0 +1,27 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <div class="admin_panel_content">
+        <div class="product_detail_edit_box">
+            <div class="product_detail_edit_left">
+                <div class="product_detail_img">
+                    <img src="/media/{{ object.image|default:'prod_images/default.jpg' }}" alt="{{ object.name }}">
+                </div>
+            </div>
+
+            <div class="product_detail_edit_right">
+                <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="button form-control" type="submit" value="сохранить">
+                    <input class="button" type="button" value="отмена" onclick="location.href='{% url 'admin_panel:category_list' %}'">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="admin_button_panel">
+        <a class="button" href="{% url 'admin_panel:user_list' %}">пользователи</a>
+        <a class="button" href="{% url 'admin_panel:category_list' %}">категории</a>
+    </div>
+{% endblock %}

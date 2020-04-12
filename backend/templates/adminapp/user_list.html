@@ -1,0 +1,51 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>Список пользователей</h2>
+    <div class="admin_panel_content">
+        <div class="record_box">
+            {% for object in object_list %}
+                <div class="record">
+                    <div>
+                        <div class="user_avatar">
+                            <img src="/media/{{ object.avatar|default:'user_avatars/default.jpg' }}" alt="{{ object.username }}">
+                        </div>
+                        <div {% if object.is_superuser %}
+                            class="user_admin_role"
+                            {% else %}
+                            class="user_role"
+                        {% endif %}>
+                            {% if object.is_superuser %}
+                                Администратор
+                            {% else %}
+                                Пользователь
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="user_name">
+                        <p><strong>{{ object.username }}</strong></p>
+                        <p>
+                            {% if object.first_name %}
+                                {{ object.first_name|title }}
+                                {% if object.last_name %}
+                                    <br>{{ object.last_name|title }}
+                                {% endif %}
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="user_data">Возраст:<br>{{ object.age }}</div>
+                    <div class="user_data">Адрес почты:<br>{{ object.email }}</div>
+                    <div class="user_data">Последний вход:<br>{{ object.last_login }}</div>
+                    <div class="record_button_panel">
+                        <a class="button" href="{% url 'admin_panel:user_update' object.pk %}">редактировать</a>
+                        <a class="button" href="{% url 'admin_panel:user_delete' object.pk %}">удалить</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="admin_button_panel">
+        <a class="button" href="{% url 'admin_panel:user_create' %}">добавить пользователя</a>
+    </div>
+{% endblock %}

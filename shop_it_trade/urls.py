@@ -9,6 +9,7 @@ urlpatterns = [
     re_path(r'^', include('backend.apps.mainapp.urls', namespace='main')),
     re_path(r'^auth/', include('backend.apps.authapp.urls', namespace='auth')),
     re_path(r'^basket/', include('backend.apps.basketapp.urls', namespace='basket')),
+    re_path(r'^admin_panel/', include('backend.apps.adminapp.urls', namespace='admin_panel')),
 ]
 
 if settings.DEBUG:

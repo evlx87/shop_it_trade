@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>Админка</h2>
+    <div class="admin_panel_content">
+        <p class="greeting">Добро пожаловать в панель администратора, {{ user.first_name }}</p>
+    </div>
+    <div class="admin_button_panel">
+        <a class="button" href="{% url 'admin_panel:user_list' %}">пользователи</a>
+        <a class="button" href="{% url 'admin_panel:category_list' %}">категории</a>
+    </div>
+{% endblock %}
