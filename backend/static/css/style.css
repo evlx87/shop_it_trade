@@ -350,7 +350,6 @@ h4 {
 }
 /* Админка */
 .admin_panel_content {
-    border: 1px solid black;
     height: 500px;
     margin: 10px auto;
 }
@@ -456,4 +455,83 @@ h4 {
 }
 .product_record_desc {
     height: 90px;
+}
+/* Админка: Страница подробной информации о продукте */
+.detail_border {
+    border: 1px solid black;
+}
+.product_detail_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 900px;
+    margin: 10px auto;
+}
+.product_detail_left_side {
+    float: left;
+    /*height: 500px;*/
+    width: 400px;
+    text-align: center;
+}
+.product_detail_right_side {
+    float: left;
+    width: 460px;
+    /*height: 600px;*/
+}
+.product_detail_img {
+    margin: 10px auto;
+    text-align: center;
+    height: 320px;
+    width: 95%;
+}
+.product_detail_img img {
+    width: 95%;
+}
+.product_detail_summary {
+    width: 95%;
+    margin: 10px auto;
+    height: 180px;
+}
+.product_detail_button {
+    margin: 10px auto;
+    width: 95%;
+}
+.product_detail_name {
+    width: 95%;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.product_detail_short_desc {
+    width: 95%;
+    height: 150px;
+    margin: 10px auto;
+}
+.product_detail_full_desc {
+    width: 95%;
+    height: 300px;
+    margin: 10px auto;
+}
+.product_detail_desc_title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+/* Админка: Страница редактирования продукта */
+.product_detail_edit_box {
+    width: 95%;
+    height: 95%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product_detail_edit_left {
+    float: left;
+    width: 420px;
+}
+.product_detail_edit_right {
+    float: left;
+    width: 450px;
 }

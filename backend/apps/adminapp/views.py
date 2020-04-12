@@ -187,3 +187,8 @@ def product_delete(request, pk):
 
 class ProductDetailView(DetailView):
     model = Product
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = 'Админка/Подробная информация'
+        return context

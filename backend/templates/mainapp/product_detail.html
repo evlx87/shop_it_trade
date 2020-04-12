@@ -1,0 +1,35 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <div class="product_detail_box">
+        <div class="product_detail_left_side">
+            <div class="product_detail_img">
+                <img src="/media/{{ object.image|default:'prod_images/default.jpg' }}" alt="{{ object.name }}">
+            </div>
+            <div class="product_detail_summary">
+                <p><b>цена: </b>{{ object.price }} руб</p>
+                <p><b>количество: </b>{{ object.quantity }}</p>
+                <p><b>в каталоге: </b>{% if object.is_active %}да{% else %}нет{% endif %}</p>
+            </div>
+            <div class="product_detail_button">
+                <a class="button" href="{% url 'admin_panel:product_update' object.pk %}">редактировать</a>
+                <a class="button" href="{% url 'admin_panel:product_delete' object.pk %}">удалить</a>
+                <a class="button" href="{% url 'admin_panel:category_products' object.category.pk %}">назад</a>
+            </div>
+        </div>
+        <div class="product_detail_right_side">
+            <div class="product_detail_name">
+                <p>{{ object.category.name|title }} / {{ object.name|title }}</p>
+            </div>
+            <div class="product_detail_short_desc">
+                <p class="product_detail_desc_title">Краткая информация</p>
+                <p>{{ object.short_desc }}</p>
+            </div>
+            <div class="product_detail_full_desc">
+                <p class="product_detail_desc_title">Подробная информация</p>
+                <p>{{ object.description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
