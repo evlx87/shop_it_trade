@@ -133,3 +133,4 @@ dmypy.json
 /backend/apps/authapp/migrations/
 /backend/apps/mainapp/migrations/
 /backend/apps/basketapp/migrations/
+/backend/apps/orderapp/migrations/0001_initial.py
