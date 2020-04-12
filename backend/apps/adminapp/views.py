@@ -98,6 +98,7 @@ class CategoryCreateView(CreateView):
 
 class CategoryUpdateView(UpdateView):
     model = ProductCategory
+    template_name = 'adminapp/category_form.html'
     success_url = reverse_lazy('admin_panel:category_list')
     form_class = ProductCategoryAdminUpdateForm
 
@@ -109,6 +110,7 @@ class CategoryUpdateView(UpdateView):
 
 class CategoryDeleteView(DeleteView):
     model = ProductCategory
+    template_name = 'adminapp/category_delete.html'
     success_url = reverse_lazy('admin_panel:category_list')
 
     def delete(self, request, *args, **kwargs):
@@ -187,6 +189,7 @@ def product_delete(request, pk):
 
 class ProductDetailView(DetailView):
     model = Product
+    template_name = 'adminapp/product_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

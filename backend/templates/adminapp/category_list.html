@@ -11,8 +11,8 @@
                     <div class="category_desc">{{ object.description }}</div>
                     <div class="category_actions">
                         <a class="button" href="{% url 'admin_panel:category_products' object.pk %}">товары категории</a>
-                        <a class="button" href="#">редактировать</a>
-                        <a class="button" href="#">удалить</a>
+                        <a class="button" href="{% url 'admin_panel:category_update' object.pk %}">редактировать</a>
+                        <a class="button" href="{% url 'admin_panel:category_delete' object.pk %}">удалить</a>
                     </div>
                 </div>
             {% endfor %}

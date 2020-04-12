@@ -1,0 +1,14 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>Редактирование категории</h2>
+    <div class="login">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button form-control" type="submit" value="сохранить">
+            <input class="button" type="button" value="отмена" onclick="location.href='{% url 'admin_panel:category_list' %}'">
+        </form>
+    </div>
+{% endblock %}
