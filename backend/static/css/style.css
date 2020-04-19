@@ -535,3 +535,42 @@ h4 {
     float: left;
     width: 450px;
 }
+/* Раздел заказы */
+.order_box {
+    height: 500px;
+    margin: 10px auto;
+}
+.order_button_panel {
+    margin: 10px auto;
+    text-align: center;
+}
+.orders_list {
+    border: 1px solid black;
+    margin: 5px auto;
+    min-width: 900px;
+}
+
+/* Новый заказ */
+
+/* Описание заказа */
+.order_detail {
+    width: 95%;
+    margin: 10px auto;
+}
+.order_detail_box {
+    margin: 5px auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.order_detail_element {
+    float: left;
+    font-size: 17px;
+}
+.order_detail_quantity {
+
+}
+.order_detail_cost {
+
+}
