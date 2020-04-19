@@ -63,6 +63,9 @@ h4 {
     box-shadow: none;
     background-color: #d41306;
 }
+.button_panel_center {
+    text-align: center;
+}
 /* Главное меню */
 .menu {
     text-align: center;
@@ -281,10 +284,12 @@ h4 {
     height: 80px;
     float: none;
     margin: 10px auto;
+    border: 1px solid #eaeaea;
 }
 .basket_record img {
     float: left;
     width: 100px;
+    max-height: 80px;
     border-radius: 25px;
 }
 .basket_record span.category_name {
@@ -549,9 +554,6 @@ h4 {
     margin: 5px auto;
     min-width: 900px;
 }
-
-/* Новый заказ */
-
 /* Описание заказа */
 .order_detail {
     width: 95%;
@@ -568,9 +570,8 @@ h4 {
     float: left;
     font-size: 17px;
 }
-.order_detail_quantity {
-
-}
-.order_detail_cost {
-
+/* Новый заказ */
+.order_new_box {
+    margin: 5px auto;
+    width: 590px;
 }
