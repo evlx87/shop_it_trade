@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+   <div class="category_delete">
+       {% include 'orderapp/includes/inc_order_summary.html' %}
+       <form action="{% url 'order:order_delete' object.pk %}" method="post">
+           {% csrf_token %}
+           <div class="order_button_panel">
+               <h2>Уверены, что хотите удалить?</h2>
+               <input class="button" type="submit" value="удалить">
+               <input class="button" type="button" value="отмена" onclick="location.href='{% url 'order:orders_list' %}'">
+           </div>
+       </form>
+   </div>
+{% endblock %}
