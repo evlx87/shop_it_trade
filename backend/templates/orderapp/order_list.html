@@ -1,0 +1,52 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block page_content %}
+    <h2>
+       Ваши заказы,
+       {% if user.first_name %}
+           {{ user.first_name|title}}
+       {% else %}
+           Пользователь
+       {% endif %}
+    </h2>
+    <div class="order_box detail_border">
+        <table class="table orders_list">
+           <thead>
+             <tr>
+               <th>ID</th>
+               <th>Создан</th>
+               <th>Обновлен</th>
+               <th>Статус</th>
+             </tr>
+           </thead>
+           <tbody>
+               {% for item in object_list %}
+                   {% if item.is_active %}
+                   <tr>
+                       <td>{{ item.pk }}</td>
+                       <td>{{ item.created|date:"Y-m-d H:i:s" }}</td>
+                       <td>{{ item.updated|date:"Y-m-d H:i:s" }}</td>
+                       <td>{{ item.get_status_display }}</td>
+                       <td><a class="button" href="{% url 'order:order_read' item.pk %}">посмотреть</a></td>
+                       <td>
+                           {% if item.status == 'FM' %}
+                             <a  class="button" href="{% url 'order:order_update' item.pk %}">редактировать</a>
+                           {% endif %}
+                       </td>
+                       <td>
+                           {% if item.status == 'FM' %}
+                             <a  class="button" href="{% url 'order:order_delete' item.pk %}">удалить</a>
+                           {% endif %}
+                       </td>
+                   </tr>
+                   {% endif %}
+               {% endfor %}
+           </tbody>
+       </table>
+    </div>
+    <div class="order_button_panel">
+        <a class="button" href="{% url 'main:index' %}">на главную</a>
+        <a class="button" href="{% url 'order:order_create' %}">оформить заказ</a>
+    </div>
+{% endblock %}
