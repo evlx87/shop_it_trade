@@ -24,15 +24,11 @@
                     <a>{{ user.first_name|default:'Пользователь' }}</a>
                     <ul>
                         <li>
-                            <a href="{% url 'auth:update' %}">
-                                Профиль
-                            </a>
+                            <a href="{% url 'auth:update' %}">Профиль</a>
                         </li>
                         {% if user.is_superuser %}
                         <li>
-                            <a href="{% url 'admin_panel:index' %}">
-                                Админка
-                            </a>
+                            <a href="{% url 'admin_panel:index' %}">Админка</a>
                         </li>
                         {% endif %}
                         <li>
@@ -45,17 +41,16 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'auth:logout' %}">
-                                Выход
-                            </a>
+                            <a href="{% url 'order:orders_list' %}">Заказы</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'auth:logout' %}">Выход</a>
                         </li>
                     </ul>
                 </li>
             {% else %}
                 <li>
-                    <a href="{% url 'auth:login' %}">
-                        Вход
-                    </a>
+                    <a href="{% url 'auth:login' %}">Вход</a>
                 </li>
             {% endif %}
 
